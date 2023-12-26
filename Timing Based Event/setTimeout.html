@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<style>
+    body {
+        background-color: rgb(55, 55, 237);
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Would you like to know my name?</h1>
+        <br>
+        <h2 id="myname" style="color:white ;"> </h2>
+        <button id="btn">Ohh yaaa🤤!</button>
+    </div>
+
+</body>
+
+<script>
+    const name = document.querySelector('#myname');
+
+    const btn = document.querySelector('#btn');
+
+    myTimeout = () => {
+        name.innerHTML = "Loading......😁"
+        setTimeout(myGreeting, 2000);
+    }
+    myGreeting = () => {
+        // name.innerHTML = "Suprise mf I am Srijit"
+        document.getElementById('myname').innerHTML="Suprise mf I am Srijit"
+        alert('hi sexy🤤🤤🤤🤤')
+    }
+    btn.addEventListener('click', myTimeout);
+    
+</script>
+
+</html>
