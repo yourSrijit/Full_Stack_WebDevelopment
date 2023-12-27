@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check History</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: yellow;
+        }
+        .btn{
+            color: white;
+            background-color: black;
+            /* position: absolute; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Clock the button to check the history</h3>
+    <button class="btn" onclick="goBack()">Go Back</button>
+    
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
