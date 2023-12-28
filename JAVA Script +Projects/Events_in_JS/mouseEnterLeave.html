@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <style>
+         body{
+            background:#2a364f ;
+        }
+      .box{
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+        border: 2px solid black;
+        text-align: center;
+        position: relative;
+        top: 50vh;
+        margin: 0 auto;
+      }
+      .box h4{
+        padding-top: 50px;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="box"><h4>Wanna see magic?</h4></div>
+
+    <script>
+      const boxes = document.getElementsByClassName("box");
+  
+      // Loop through all elements with the class "box"
+      for (let i = 0; i < boxes.length; i++) {
+          // Add event listeners to each box
+          boxes[i].addEventListener('mouseenter', () => {
+              boxes[i].style.backgroundColor = 'red';
+          });
+  
+          boxes[i].addEventListener('mouseleave', () => {
+              boxes[i].style.backgroundColor = 'white';
+          });
+      }
+
+
+  </script>
+  
+
+    </script>
+</body>
+</html>
