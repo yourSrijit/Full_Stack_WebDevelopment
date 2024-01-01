@@ -210,12 +210,12 @@ display: flex;
  .player{
     width: 50%;
  }
- .control{
+ .controlers{
     width: 25%;
  }
  .player-control{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
  }
  .player-control-icon{
@@ -230,6 +230,9 @@ display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
+ }
+ .pb{
+    margin-right: 1rem;
  }
  .progress-bar{
   width: 65%;
@@ -250,4 +253,19 @@ display: flex;
     background-color: #1bd760;
     border-radius: 50%;
     margin-top: -6px;
+}
+.controlers{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.controlers img{
+    height: 1rem;
+    
+}
+.controlers .img1{
+    height: 2rem;
+}
+.volume-control{
+    width: 30%;
 }
