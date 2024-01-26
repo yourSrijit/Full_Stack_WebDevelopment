@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    <p>Click the buttom to display a date after cahnging the button</p>
+    <button onclick="myFunction()">Click me</button>
+    <p id="demo"></p>
+    
+    <script>
+        function myFunction(){
+            var d=new Date();
+            document.getElementById("demo").innerHTML=d;
+        }
+        (function(){
+            setInterval(()=>{
+                var d=new Date().toLocaleTimeString();
+                document.getElementById("demo").innerHTML=d;
+            },1000)
+        })();
+    </script>
+</body>
+</html>
