@@ -1,0 +1,24 @@
+h1{
+    border: 2px solid black;
+    width: 33.33%;
+}
+.outer{
+    height: 400px;
+    width: 400px;
+    border: 2px solid blackj;
+    background-color: pink;
+    font-size: 20px;
+}
+.inner{
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+/* Snowball effect */
+.snw{
+    font-size: 2rem;  
+     /* em it will increse the font size relativly */
+}
