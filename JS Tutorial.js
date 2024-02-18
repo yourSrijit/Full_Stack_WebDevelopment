@@ -1,4 +1,4 @@
-// const chalk = require("chalk");
+// const chalk = require("chalk"); 
 
 /****  Section 1👉 we need to do it in console ****/
 // alert("Welcome, to Complete JavaScript course");
