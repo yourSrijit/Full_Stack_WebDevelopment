@@ -1,0 +1,50 @@
+<%layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
+        <h1>Create a Listing</h1>
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+       
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label> <br>
+            <input type="text" name="listing[title]" placeholder="Add a catchy title" class="form-control" required>
+            <div class="valid-feedback">Title looks good</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label><br>
+            <textarea name="listing[description]"  cols="30" rows="3" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+
+       <div class="mb-3">
+            <label for="image" class="form-label">Image Link</label><br>
+            <input type="text" name="listing[image]" placeholder="Add image" class="form-control">
+       </div>
+       <div class="row">
+        <div class="mb-3 col-md-4"> 
+            <label  for="price" class="form-label">Price</label><br>
+            <input  name="listing[price]" placeholder="Add price" class="form-control" required>
+            <div class="invalid-feedback">Price should be in digit</div>
+        </div>
+        <div class="mb-3  col-md-8">
+            <label for="country" class="form-label">Country</label><br>
+            <input type="text" name="listing[country]" placeholder="Add country" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid Country name</div>
+        </div>
+       </div>
+
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label><br>
+            <input type="text" name="listing[location]" placeholder="Add location" class="form-control" required>
+            <div class="invalid-feedback">Location should be valid</div>
+        </div>
+        <br>
+        <button class="btn change-btn">Add</button>
+        <br><br>
+    </form>
+</div>
+</div>
+</div>
