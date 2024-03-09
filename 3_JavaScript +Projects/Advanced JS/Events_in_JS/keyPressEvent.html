@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press Event</title>
+    <style>
+              body{
+            background:#2a364f ;
+        }
+        p{
+            color: white;
+            font-size: larger;
+            font-weight: 800;
+            text-align: center;
+        }
+        input{
+            font-size: larger;
+            position: relative;
+            left: 40vw;
+        }
+        #keys{
+            width: 400px;
+            height: 40px;
+            background-color: beige;
+            position: relative;
+            left: 35vw;
+            color: black;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <p>A function will trigger when the user is pressing a key in the input field</p>
+            <br>
+            <input type="text" name="press" onkeypress="keyPress()" onkeydown="KeyDown()" onkeyup="keyUp()">
+            <br>
+            <p id="keys"></p>
+        </div>
+    </div>
+    
+
+    <script>
+
+
+
+const keyPress =() =>{
+    // document.getElementById("keys").innerHTML=`You enter ${event.key} ans its code is ${event.code
+}
+
+
+//better to use 2nd and 3rd one
+const KeyDown= ()=>{
+    document.getElementById("keys").innerHTML=`Key is Up`;
+}
+const keyUp= ()=>{
+    document.getElementById("keys").innerHTML=`Key is Down`;
+}
+
+
+    </script>
+</body>
+</html>
