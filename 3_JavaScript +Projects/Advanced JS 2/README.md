@@ -2,7 +2,10 @@
 - This is the practice folder of advanced js from [Thapa Technoical](https://youtu.be/YwsOCN8woA8?si=vjtXdh9nqPtQ0-3Y)  
 
 # Event In JS
+<<<<<<< HEAD
 
+=======
+>>>>>>> efc24ebb264d33e418b8e0654bc59af2cb4c0155
 ![Screenshot 2024-03-09 170111](https://github.com/yourSrijit/Full_Stack_WebDevelopment/assets/91645620/49c85e30-d6db-4009-80b7-c5667745011a)
 
 ## Mouse Events
@@ -27,4 +30,7 @@ addEventListner('keydown',(event)=>{
     event.type             // Return the typr keydown or keyup
 })
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> efc24ebb264d33e418b8e0654bc59af2cb4c0155
