@@ -27,3 +27,4 @@ addEventListner('keydown',(event)=>{
     event.type             // Return the typr keydown or keyup
 })
 ```
+
