@@ -2,9 +2,8 @@
 - This is the practice folder of advanced js from [Thapa Technoical](https://youtu.be/YwsOCN8woA8?si=vjtXdh9nqPtQ0-3Y)  
 
 # Event In JS
-![Screenshot 2024-03-09 170111](/assets/Screenshot%202024-03-09%20170111.png)!
 
-[Screenshot 2024-03-09 170111](https://i.imgur.com/7B1bt2I.png)
+![Screenshot 2024-03-09 170111](https://github.com/yourSrijit/Full_Stack_WebDevelopment/assets/91645620/49c85e30-d6db-4009-80b7-c5667745011a)
 
 ## Mouse Events
 ```
