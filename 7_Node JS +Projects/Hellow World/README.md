@@ -3,6 +3,7 @@ This is a Node js Bootcamp from this channel [Hello World](https://youtube.com/p
 
 
  `Package.json` :ensure the list of packages with their version.
+
  `Package-lock.json` :Ensure detailed of every package installe with version,sub dependencies.
 
  ## 4. Creating Server
@@ -31,3 +32,9 @@ app.listen(port,()=>{
     console.log('Port is listenig in 3000');
 })
 ```
+
+## 5.METHODS
+  - GET -> request data from the server
+  - POST
+  - PATCH
+  - DELETE
