@@ -1,7 +1,8 @@
 # Advanced JS practice 2
 - This is the practice folder of advanced js from [Thapa Technoical](https://youtu.be/YwsOCN8woA8?si=vjtXdh9nqPtQ0-3Y)  
+---
 
-# Event In JS
+## 1. Event In JS
 
 ![Screenshot 2024-03-09 170111](https://github.com/yourSrijit/Full_Stack_WebDevelopment/assets/91645620/49c85e30-d6db-4009-80b7-c5667745011a)
 
@@ -29,7 +30,7 @@ addEventListner('keydown',(event)=>{
 ```
 
 
-# 1.Liner gradient Changer 
+## (Project-1) Liner gradient Changer 
 
 ```
 let btn1=document.getElementById("left");
@@ -76,4 +77,49 @@ btn2.addEventListener('click',()=>{
 https://github.com/yourSrijit/Full_Stack_WebDevelopment/assets/91645620/cbecce63-eaf9-492a-8b0b-fc3c47d2d2ca
 
 
+---
 
+## 2. Local Storage
+- It allow to store objects in form of key/value pair
+- There have no expiration data
+- The data is not deleted when the browser is closed and available for future sessions
+
+```
+// How to store 
+localStorage.setItem("key1","value1");
+
+// how to get 
+localStorage.getItem("key1");
+
+// how to remove data 
+localStorage.removeItem("key1");
+
+```
+
+- Todo local storage can only store only strings so when you want to store a complex
+data structure like an array or object you need to convert it to a string using `JSON.stringify(Obj)`
+and when you retrive the json file in original form use `JSON.parse`
+
+```
+let info={
+    Fname:"srijit",
+    Lname:"Bera",
+    Skills:["C++","C","JAVA","REACT","CP"],
+    Address:{
+        pin:456965,
+        star:"Sun",
+        planate:"Earth"
+    }
+}
+
+//As the data is not a string so we need to store it as a string
+// How to store 
+localStorage.setItem("key1",JSON.stringify(info));
+
+// how to get 
+JSON.parse(localStorage.getItem("key1"));
+
+// how to remove data 
+localStorage.removeItem("key1");
+
+```

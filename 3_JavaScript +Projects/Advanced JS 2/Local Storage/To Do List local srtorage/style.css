@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+/* .parent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 30%;
+    transform: translateY(-50%);
+    gap: 20px;
+}
+h1{
+    color: white;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+button{
+    background-color: #f5ee62;
+    padding: .6rem .8rem;
+    border-radius: 1rem;
+    margin-right: 3.6rem;
+    cursor: pointer;
+    transition: all .3s linear;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.6;
+}
+button:hover{
+    background-color: transparent;
+    color: #f5ee62;
+}
+.todo_list{
+    color: white;
+} */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+.parent {
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.todo-list-container {
+    text-align: left;
+}
+
+.todo_list {
+    margin-bottom: 10px;
+}
+
+.deletebtn {
+    padding: 5px 10px;
+    background-color: #ff6347; /* Coral color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.deletebtn:hover {
+    background-color: #cc4c3b; /* Darker coral color on hover */
+}
