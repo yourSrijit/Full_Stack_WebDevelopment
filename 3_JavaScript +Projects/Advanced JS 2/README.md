@@ -123,3 +123,21 @@ JSON.parse(localStorage.getItem("key1"));
 localStorage.removeItem("key1");
 
 ```
+
+## Todo Project with local storage Demo
+ 
+ ![Demo Video](https://i.imgur.com/Re69tte.mp4)
+
+## 3.Date Object in JS
+  9 WAY TO CREATE A NEW DATE OBJECT
+  ```
+  new Date()
+  new Date(date string)
+  new Date(year,month)
+  new Dtae(year,month,day)
+  new Dtae(year,month ,day,hour)
+  new Date(year,month ,day,hour,min)
+  new Date(year,month ,day,hour,min,sec)
+  new Date(year,month ,day,hour,min,sec,ms)
+  new Date(milisecond)
+  ```
