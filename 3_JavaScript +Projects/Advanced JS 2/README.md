@@ -141,3 +141,24 @@ localStorage.removeItem("key1");
   new Date(year,month ,day,hour,min,sec,ms)
   new Date(milisecond)
   ```
+
+
+
+  ## 4. Objects in JS
+
+Objects are a fundamental part of js providing a way to group related data and function together . In js an object is a collection of key-value pairs,
+where each ket is a string ans each value is any data type
+    ```
+    let obj={
+        name:"srijit",
+        age:50
+    }    
+    ```
+    - To make the key as dynamic use [] bracket 
+    ```
+       let name ="fname;
+      let obj={
+        [name]:"srijit",
+        age:50
+    } 
+    ```
