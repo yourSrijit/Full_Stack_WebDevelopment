@@ -143,7 +143,7 @@ localStorage.removeItem("key1");
   ```
 
 
-
+---
   ## 4. Objects in JS
 
 Objects are a fundamental part of js providing a way to group related data and function together . In js an object is a collection of key-value pairs,
@@ -162,3 +162,12 @@ where each ket is a string ans each value is any data type
         age:50
     } 
     ```
+    ```
+    Object.keys(obj) ->    return all the keys
+    Object.values(obj) ->  return all the values
+    Object.entries(obj) -> return all the key and values as a array
+    obj.hasOwnProperty(name)  // true | false
+    let newArray =Object.assign({},)
+    ```
+
+    ` Length & For of property not works for Objects `
