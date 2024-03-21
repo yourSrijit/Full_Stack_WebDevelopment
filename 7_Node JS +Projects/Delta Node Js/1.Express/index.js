@@ -9,10 +9,10 @@ app.listen(port,()=>{
 });
 
 
-// app.use((req,rep)=>{
-//     console.log("Request received");
-//     rep.send("This is a basic Response");
-// }); 
+app.use((req,rep)=>{
+    console.log("Request received");
+    rep.send("This is a basic Response");
+}); 
 
 app.get("/",(req,res)=>{
     console.log('You connected to rout path ');
