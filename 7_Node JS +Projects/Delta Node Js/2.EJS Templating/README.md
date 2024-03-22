@@ -41,3 +41,12 @@ Embeddng expression into marked up text
 _%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
 
 ```
+
+## Includes
+```
+<ul>
+  <% users.forEach(function(user){ %>
+    <%- include('user/show', {user: user}); %>
+  <% }); %>
+</ul
+```
