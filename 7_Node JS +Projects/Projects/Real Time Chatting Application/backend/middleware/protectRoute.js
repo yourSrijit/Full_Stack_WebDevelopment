@@ -1,17 +1,15 @@
 import jwt from "jsonwebtoken";
-import User from "../models/userModel.js";
+import User from "../model/userModel.js";
 const protectRoute = async (req, res, next) => {
     try{
-        const token=req.cookie.jwt;
+        const token=req.cookies.jwt;
         if(!token){
-            return res.status(401).json({message: "Not authorized, no token"});
+            return res.status(401).json({message: "Not authorized, no token,Please Login"});
         }
         const decode=jwt.verify(token, process.env.JWT_SECRET);
         if(!decode){
             return res.status(401).json({message: "Not authorized, token failed"});
         }
-
-        console.log(decode);
 
         const user=await User.findById(decode.userId).select("-password");
         if(!user){
