@@ -4,7 +4,7 @@
 
 ### Basic Commands
 
-- **git init**: Initialize a new Git repository.
+- **git init**: Initialize a new Git repository
 - **git clone [url]**: Clone a repository into a new directory.
 - **git add [file]**: Add file(s) to the staging area.
 - **git commit -m "[message]"**: Commit changes to the repository with a message.
