@@ -7,4 +7,4 @@
  - GIT GITHUB
  - REACT
  - Tailwind
- - Node jS
+ - Node js
