@@ -8,6 +8,3 @@
  - REACT
  - Tailwind
  - Node Js
-
-
-
