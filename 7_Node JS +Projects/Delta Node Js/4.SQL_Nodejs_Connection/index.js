@@ -1,4 +1,4 @@
-const { faker, da } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker');
 const mysql=require('mysql2');
 let express=require("express");
 let app=express();
