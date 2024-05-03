@@ -1,5 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const mysql=require('mysql2');
+
 let express=require("express");
 let app=express();
 const path=require("path");
@@ -10,6 +11,7 @@ const { v4: uuidv4 } = require("uuid");
 app.use(express.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
+
 
 //made connection object 
 const connection=mysql.createConnection({
@@ -28,6 +30,8 @@ let getRandomUser=()=>{
     faker.internet.password(),
   ]
 };
+
+//SQL Chaning
 //Inserting new data
 // let q="INSERT INTO USER(ID,USERNAME,EMAIL,PASSWORD) VALUES ?";
 // let data=[]
@@ -36,6 +40,20 @@ let getRandomUser=()=>{
 //     data.push(getRandomUser());
 
 //   }
+
+// try{
+//     connection.query(q,[data],(err, result) => {
+//           if(err) throw err;
+//           console.log('Connection made successfully 😋');
+//           console.log(result);
+//     })
+// }
+// catch(err){
+//     console.log(err);
+// }
+
+// connection.end();
+
 
 let port=3000;
 //Home route
@@ -213,16 +231,6 @@ app.listen(port,()=>{
      console.log('Server is listening in port no 3000');
 })
 
-// try{
-//     connection.query(q,[data],(err, result) => {
-//           if(err) throw err;
-//           console.log('Connection made successfully 😋');
-//           console.log(result);
-//     })
-// }
-// catch(err){
-//     console.log(err);
-// }
-// connection.end();
+
 
 
