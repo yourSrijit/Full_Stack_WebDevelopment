@@ -1,4 +1,4 @@
-import express from "Express";
+import express from "express";
 import { login, logout, signup } from "../controllers/authController.js";
 let router=express.Router();
 

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl m-0 p-0;
+  }
+
+  button {
+    @apply bg-pink-300 px-7 py-2 rounded-xl text-xl shadow-xl shadow-gray-300 hover:bg-pink-500;
+  }
+
+  input {
+    @apply border-2 w-full rounded-lg h-12 outline-dashed outline-green-951;
+  }
+
+  textarea {
+    @apply border-2 w-full rounded-lg h-16 outline-dashed outline-green-951;
+  }
+
+  header {
+    padding: 16px;
+    border-bottom: 2px solid #333;
+    background: hsl(345, 71%, 90%);
+  }
+
+  label {
+    @apply text-2xl text-gray-952;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

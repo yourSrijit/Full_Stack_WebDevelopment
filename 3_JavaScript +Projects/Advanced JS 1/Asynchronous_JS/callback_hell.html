@@ -12,7 +12,7 @@
     <script>
         let h=document.querySelector('h1');
         function changecolor(color,delay,nextColorChange){
-            setTimeout(()=>{
+            setTimeout(()=>{ 
                 h.style.color=color;
                 if(nextColorChange) nextColorChange();
             },delay);
@@ -22,7 +22,7 @@
             changecolor('blue',1000,()=>{
                 changecolor('yellow',1000,()=>{
                     changecolor('red',1000,()=>{
-                        changecolor('white',1000);
+                        changecolor('brown',1000);
                     })
                 })
             })
@@ -30,3 +30,5 @@
     </script>
 </body>
 </html>
+
+<!-- CALL BACK HELL  -->
