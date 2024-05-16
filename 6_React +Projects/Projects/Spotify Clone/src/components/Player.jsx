@@ -5,7 +5,7 @@ import { useContext } from 'preact/hooks'
 import { PlayerContext } from '../context/PlayerContext'
 
 function Player() {
-  const{seekBg,seekBar,playStatus,play,pause,track,time}=useContext(PlayerContext);
+  const{seekBg,seekBar,playStatus,play,pause,track,time,previous,next,seekSong}=useContext(PlayerContext);
 
   return (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
@@ -19,7 +19,7 @@ function Player() {
       <div className='flex flex-col items-center gap-1 m-auto'>
         <div className='flex gap-4 items-center'>
           <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="" />
-          <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
+          <img onClick={()=>{previous()}} className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
           
           {playStatus ?
            <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt="" /> :
@@ -27,21 +27,24 @@ function Player() {
           }
          
 
-          <img className='w-4 cursor-pointer' src={assets.next_icon} alt="" />
+          <img onClick={()=>{next()}} className='w-4 cursor-pointer' src={assets.next_icon} alt="" />
           <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="" />
         </div>
 
       <div className='flex items-center gap-5'> 
       <p>{time.curTime.min}:{time.curTime.sec}</p>
-      <div ref={seekBg} className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
+      <div onClick={seekSong} ref={seekBg} className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
              <hr ref={seekBar} className='h-1 border-none w-10 bg-green-800 rounded-full'/>                                 
       </div>
-      <p>{time.totTime.min}:{time.totTime.sec}</p>
+      {
+        !time.totTime.min == 0 && <p>{time.totTime.min}:{time.totTime.sec}</p>
+      }
+      
       </div>
       </div>
        
        <div className='hidden lg:flex items-center gap-2 opacity-75'>
-        <img className='w-4' src={assets.play_icon} alt="" />
+        <img className='w-4' src={assets.plays_icon} alt="" />
         <img className='w-4' src={assets.mic_icon} alt="" />
         <img className='w-4' src={assets.queue_icon} alt="" />
         <img className='w-4' src={assets.speaker_icon} alt="" />
