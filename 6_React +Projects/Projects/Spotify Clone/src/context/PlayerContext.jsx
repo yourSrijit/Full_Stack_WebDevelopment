@@ -7,6 +7,10 @@ const PlayerContextProvider=(props)=>{
     const audioRef=useRef();
     const seekBg=useRef();
     const seekBar=useRef();
+
+    const setVolumn=useRef(); //used to chaneg bg of volumn and control
+    const setVolumnBg=useRef();
+    
     
     const[track,setTrack]=useState(songsData[5]);
     const [playStatus,setPlayStatus]=useState(false);
@@ -53,16 +57,38 @@ const PlayerContextProvider=(props)=>{
            setPlayStatus(true);
         }
    }
-   //handel seekSong fucntion 
+   //handel seekSong function 
    const seekSong=async (e)=>{
            audioRef.current.currentTime=(e.nativeEvent.offsetX /seekBg.current.offsetWidth )*audioRef.current.duration
    }
+
+   //handel Volumn control function 
+   const seekVolumn = (e) => {
+    const newVolume = Math.floor((e.nativeEvent.offsetX / setVolumnBg.current.offsetWidth) * 100);
+
+    setVolumn.current.style.width=newVolume +"%";
+     audioRef.current.volume=newVolume/100;
+    
+  };
+
+  //Handel volume by scrolling
+  const scrollVolume=async(e)=>{
+    console.log(e);
+  }
+  
 
     
    useEffect(()=>{
     setTimeout(()=>{
         audioRef.current.ontimeupdate=() =>{
             seekBar.current.style.width=(Math.floor(audioRef.current.currentTime /audioRef.current.duration *100)) + "%";
+            if(audioRef.current.currentTime ===audioRef.current.duration ){
+                     const randomTrack=(Math.floor(Math.random()*8))+1
+                    setTrack(songsData[randomTrack]);
+                     audioRef.current.play()
+                    setPlayStatus(true);
+                    audioRef.current.autoplay=true;
+            }
             setTime({
                 curTime:{
                     sec:Math.floor(audioRef.current.currentTime % 60 ),
@@ -79,14 +105,16 @@ const PlayerContextProvider=(props)=>{
    },[audioRef])
 
     const contextValue={
-        audioRef,seekBar,seekBg,
+        audioRef,seekBar,seekBg,setVolumn,setVolumnBg,
         track,setTrack,
         playStatus,setPlayStatus,
         time,setTime,
         play,pause,
         playWithId,
         previous,next,
-        seekSong
+        seekSong,
+        seekVolumn,
+        scrollVolume
     }
     return (
         <PlayerContext.Provider value={contextValue}>

@@ -5,7 +5,21 @@ import { useContext } from 'preact/hooks'
 import { PlayerContext } from '../context/PlayerContext'
 
 function Player() {
-  const{seekBg,seekBar,playStatus,play,pause,track,time,previous,next,seekSong}=useContext(PlayerContext);
+  const{seekBg,
+    seekBar,
+    playStatus,
+    play,
+    pause,
+    track,
+    time,
+    previous,
+    next,
+    seekSong,
+    setVolumn,seekVolumn,setVolumnBg,scrollVolume}=useContext(PlayerContext);
+
+    const del=()=>{
+        console.log("Hi srijit");
+    }
 
   return (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
@@ -34,7 +48,7 @@ function Player() {
       <div className='flex items-center gap-5'> 
       <p>{time.curTime.min}:{time.curTime.sec}</p>
       <div onClick={seekSong} ref={seekBg} className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
-             <hr ref={seekBar} className='h-1 border-none w-10 bg-green-800 rounded-full'/>                                 
+             <hr ref={seekBar} className='h-1 border-none w-10 bg-green-600 rounded-full'/>                                 
       </div>
       {
         !time.totTime.min == 0 && <p>{time.totTime.min}:{time.totTime.sec}</p>
@@ -49,9 +63,11 @@ function Player() {
         <img className='w-4' src={assets.queue_icon} alt="" />
         <img className='w-4' src={assets.speaker_icon} alt="" />
         <img className='w-4' src={assets.volume_icon} alt="" />
-        <div className='w-20 bg-slate-50 h-1 rounded'>
 
+        <div ref={setVolumnBg} onClick={seekVolumn} onScroll={del} className='w-20 bg-gray-300 rounded-md overflow-y-auto h-100  cursor-pointer' >
+         <div ref={setVolumn}  className='w-10  h-1 rounded bg-green-600 '></div>
         </div>
+        
         <img className='w-4' src={assets.mini_player_icon} alt="" />
         <img className='w-4' src={assets.zoom_icon} alt="" />
 

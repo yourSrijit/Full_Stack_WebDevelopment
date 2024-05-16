@@ -122,73 +122,73 @@ export const albumsData = [
 export const songsData = [
     {
         id:0,
-        name: "Song One",
+        name: "Asal Mein - Darshan Raval",
         image: img1,
         file:song1,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"Love works in all kind of ways. Love is happiness, love is sadness",
         duration:"3:00",
         add:"5 days ago"
     },
     {
         id:1,
-        name: "Song Two",
+        name: "Ritviz - Liggi ",
         image: img2,
         file:song2,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"Liggi’s energy speaks about being spontaneous and living in the moment",
         duration:"2:20",
         add:"15 days ago"
     },
     {
         id:2,
-        name: "Song Three",
+        name: "Hoyto Tomari Janya ",
         image: img3,
         file:song3,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"Listen to the latest cover version of 'Hoyto Tomari Janya' by Miftah Zaman.",
         duration:"2:32",
         add:"16 days ago"
     },
     {
         id:3,
-        name: "Song Four",
+        name: "The Weeknd - Blinding Lights",
         image: img4,
         file:song4,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"You can turn me on with just a touch, baby",
         duration:"2:50",
         add:"9 days ago"
     },
     {
         id:4,
-        name: "Song Five",
+        name: "The Weeknd - Save Your Tears",
         image: img5,
         file:song5,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"A single teardrop falling from your eye",
         duration:"3:10",
         add:"28 days ago"
     },
     {
         id:5,
-        name: "Song Six",
-        image: img14    ,
+        name: "Alan Walker - The Spectre",
+        image: img6    ,
         file:song6,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"It all belongs to the other side We live, we love, we lie",
         duration:"2:45",
         add:"13 days ago"
     },
     {
         id:6,
-        name: "Song Seven",
+        name: "Lutt Putt Gaya | Arijit Sing",
         image: img7,
         file:song7,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"Teri gali main aaya bhul ke, changa pala c main lutt putt gya",
         duration:"2:18",
         add:"29 days ago"
     },
     {
         id:7,
-        name: "Song Eight",
+        name: "Alan Walker - Ignite",
         image: img12,
         file:song4,
-        desc:"Put a smile on your face with these happy tunes",
+        desc:"Baby tell me one more beautiful lie",
         duration:"2:35",
         add:"22 days ago"
     }
