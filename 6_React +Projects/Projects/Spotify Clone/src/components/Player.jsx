@@ -6,6 +6,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 function Player() {
   const{seekBg,seekBar,playStatus,play,pause,track,time}=useContext(PlayerContext);
+
   return (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
       <div className='hidden lg:flex items-center gap-4'>
@@ -19,6 +20,7 @@ function Player() {
         <div className='flex gap-4 items-center'>
           <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="" />
           <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
+          
           {playStatus ?
            <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt="" /> :
            <img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} alt="" />

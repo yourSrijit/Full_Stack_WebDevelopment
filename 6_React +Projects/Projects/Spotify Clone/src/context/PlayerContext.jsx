@@ -1,5 +1,5 @@
 import { createContext } from "preact";
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import { songsData } from "../assets/assets";
 
 export const PlayerContext=createContext();
@@ -29,6 +29,26 @@ const PlayerContextProvider=(props)=>{
         audioRef.current.pause();
         setPlayStatus(false);
     }
+    
+    
+   useEffect(()=>{
+    setTimeout(()=>{
+        audioRef.current.ontimeupdate=() =>{
+            console.log(audioRef.current.duration);
+            setTime({
+                curTime:{
+                    sec:Math.floor(audioRef.current.currentTime % 60 ),
+                    min:Math.floor(audioRef.current.currentTime / 60 )
+                },
+                totTime:{
+                    sec:Math.floor(audioRef.current.duration % 60 ),
+                    min:Math.floor(audioRef.current.duration / 60 )
+                }
+            })
+        }
+      
+    },1000);
+   },[audioRef])
 
     const contextValue={
         audioRef,seekBar,seekBg,
