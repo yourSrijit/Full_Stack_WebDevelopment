@@ -1,8 +1,10 @@
 import React from 'react'
 
 import { assets } from '../assets/assets'
-import { useContext } from 'preact/hooks'
+import { useContext, useState,useEffect } from 'preact/hooks'
 import { PlayerContext } from '../context/PlayerContext'
+import { FiVolumeX ,FiVolume,FiVolume1 ,FiVolume2} from "react-icons/fi"; 
+
 
 function Player() {
   const{seekBg,
@@ -15,9 +17,9 @@ function Player() {
     previous,
     next,
     seekSong,
-    setVolumn,seekVolumn,setVolumnBg,scrollVolume}=useContext(PlayerContext);
-
-    const del=()=>{
+    setVolumn,seekVolumn,setVolumnBg,audioRef,vol,setVol}=useContext(PlayerContext);
+    
+    const del=()=>{  //nothing just experimental purpose
         console.log("Hi srijit");
     }
 
@@ -61,8 +63,24 @@ function Player() {
         <img className='w-4' src={assets.plays_icon} alt="" />
         <img className='w-4' src={assets.mic_icon} alt="" />
         <img className='w-4' src={assets.queue_icon} alt="" />
-        <img className='w-4' src={assets.speaker_icon} alt="" />
-        <img className='w-4' src={assets.volume_icon} alt="" />
+        <img className='w-4' src={assets.speaker_icon} alt="" />     
+      
+        {/* Dynamic Volume   */}
+      <div onClick={()=>{
+          if(vol!=0){
+            audioRef.current.volume=0;
+            setVol(0);
+          }
+          else{
+            audioRef.current.volume=0.5;
+            setVol(.5);
+          }
+        }}>
+        {
+          vol==0 ? <FiVolumeX /> : (vol <.3 ? <FiVolume /> : (vol<.55 ? <FiVolume1/> : <FiVolume2 />))
+        }
+      </div>
+        
 
         <div ref={setVolumnBg} onClick={seekVolumn} onScroll={del} className='w-20 bg-gray-300 rounded-md overflow-y-auto h-100  cursor-pointer' >
          <div ref={setVolumn}  className='w-10  h-1 rounded bg-green-600 '></div>

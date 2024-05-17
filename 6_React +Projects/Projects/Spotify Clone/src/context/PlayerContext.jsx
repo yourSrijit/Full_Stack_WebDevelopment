@@ -14,6 +14,8 @@ const PlayerContextProvider=(props)=>{
     
     const[track,setTrack]=useState(songsData[5]);
     const [playStatus,setPlayStatus]=useState(false);
+    const [vol, setVol] = useState(0.5);
+
     const[time,setTime]=useState({
         curTime:{
             sec:0,
@@ -68,6 +70,7 @@ const PlayerContextProvider=(props)=>{
 
     setVolumn.current.style.width=newVolume +"%";
      audioRef.current.volume=newVolume/100;
+     setVol(newVolume/100);
     
   };
 
@@ -114,7 +117,8 @@ const PlayerContextProvider=(props)=>{
         previous,next,
         seekSong,
         seekVolumn,
-        scrollVolume
+        scrollVolume,
+        vol,setVol,
     }
     return (
         <PlayerContext.Provider value={contextValue}>

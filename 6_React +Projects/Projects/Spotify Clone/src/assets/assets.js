@@ -39,6 +39,15 @@ import img13 from './img13.jpg'
 import img14 from './img14.jpg'
 import img15 from './img15.jpg'
 import img16 from './img16.jpg'
+import img17 from './img17.jpg'
+import img18 from './img18.jpg'
+import img19 from './img19.jpg'
+import img21 from './img21.jpg'
+import img22 from './img22.jpg'
+import img23 from './img23.jpg'
+import img24 from './img24.jpg'
+import img25 from './img25.jpg'
+
 import song1 from  './song1.mp3'
 import song2 from  './song2.mp3'
 import song3 from  './song3.mp3'
@@ -46,6 +55,7 @@ import song4 from  './song4.mp3'
 import song5 from  './song5.mp3'
 import song6 from  './song6.mp3'
 import song7 from  './song7.mp3'
+
 
 export const assets = {
     bell_icon,
@@ -122,7 +132,7 @@ export const albumsData = [
 export const songsData = [
     {
         id:0,
-        name: "Asal Mein - Darshan Raval",
+        name: "Asal Mein ",
         image: img1,
         file:song1,
         desc:"Love works in all kind of ways. Love is happiness, love is sadness",
@@ -131,7 +141,7 @@ export const songsData = [
     },
     {
         id:1,
-        name: "Ritviz - Liggi ",
+        name: "Ritviz-Liggi",
         image: img2,
         file:song2,
         desc:"Liggi’s energy speaks about being spontaneous and living in the moment",
@@ -140,7 +150,7 @@ export const songsData = [
     },
     {
         id:2,
-        name: "Hoyto Tomari Janya ",
+        name: "Hoyto Tomari Janya",
         image: img3,
         file:song3,
         desc:"Listen to the latest cover version of 'Hoyto Tomari Janya' by Miftah Zaman.",
@@ -149,7 +159,7 @@ export const songsData = [
     },
     {
         id:3,
-        name: "The Weeknd - Blinding Lights",
+        name: "Blinding Lights",
         image: img4,
         file:song4,
         desc:"You can turn me on with just a touch, baby",
@@ -158,7 +168,7 @@ export const songsData = [
     },
     {
         id:4,
-        name: "The Weeknd - Save Your Tears",
+        name: "Save Your Tears",
         image: img5,
         file:song5,
         desc:"A single teardrop falling from your eye",
@@ -167,7 +177,7 @@ export const songsData = [
     },
     {
         id:5,
-        name: "Alan Walker - The Spectre",
+        name: "The Spectre",
         image: img6    ,
         file:song6,
         desc:"It all belongs to the other side We live, we love, we lie",
@@ -176,7 +186,7 @@ export const songsData = [
     },
     {
         id:6,
-        name: "Lutt Putt Gaya | Arijit Sing",
+        name: "Lutt Putt Gaya",
         image: img7,
         file:song7,
         desc:"Teri gali main aaya bhul ke, changa pala c main lutt putt gya",
@@ -185,8 +195,83 @@ export const songsData = [
     },
     {
         id:7,
-        name: "Alan Walker - Ignite",
+        name: "Ignite",
         image: img12,
+        file:song4,
+        desc:"Baby tell me one more beautiful lie",
+        duration:"2:35",
+        add:"22 days ago"
+    }
+]
+
+export const recentSong = [
+    {
+        id:0,
+        name: "KK's Hits",
+        image: img17,
+        file:song1,
+        desc:"Love works in all kind of ways. Love is happiness, love is sadness",
+        duration:"3:00",
+        add:"5 days ago"
+    },
+    {
+        id:1,
+        name: "Best Bollywood",
+        image: img18,
+        file:song2,
+        desc:"Liggi’s energy speaks about being spontaneous and living in the moment",
+        duration:"2:20",
+        add:"15 days ago"
+    },
+    {
+        id:2,
+        name: "Bollywood Masala",
+        image: img19,
+        file:song3,
+        desc:"Listen to the latest cover version of 'Hoyto Tomari Janya' by Miftah Zaman.",
+        duration:"2:32",
+        add:"16 days ago"
+    },
+    {
+        id:3,
+        name: "Arijit Sing",
+        image: img21,
+        file:song4,
+        desc:"You can turn me on with just a touch, baby",
+        duration:"2:50",
+        add:"9 days ago"
+    },
+    {
+        id:4,
+        name: "Hindi Bests",
+        image: img22,
+        file:song5,
+        desc:"A single teardrop falling from your eye",
+        duration:"3:10",
+        add:"28 days ago"
+    },
+    {
+        id:5,
+        name: "Valentine's Hits",
+        image: img23    ,
+        file:song6,
+        desc:"It all belongs to the other side We live, we love, we lie",
+        duration:"2:45",
+        add:"13 days ago"
+    },
+    {
+        id:6,
+        name: "00's Love",
+        image: img24,
+        file:song7,
+        desc:"Teri gali main aaya bhul ke, changa pala c main lutt putt gya",
+        duration:"2:18",
+        add:"29 days ago"
+    },
+    {
+        id:7,
+        name: "Top Artists",
+        image: img25,
         file:song4,
         desc:"Baby tell me one more beautiful lie",
         duration:"2:35",
