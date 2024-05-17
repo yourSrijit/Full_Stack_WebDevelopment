@@ -37,6 +37,17 @@ The project aims to replicate the basic functionalities of Spotify's web applica
 
 - **React.js:** A JavaScript library for building user interfaces.
 - **Tailwind CSS:** A utility-first CSS framework for creating custom designs with ease.
+- **React Icons**  :Used for some icons like play pause ,Dynamic Volume control
+
+## Features 
+- You can Play any song from anywhere you want
+- Also you can move forward and backward of the song
+- Currently there have 8 music files
+- You can play pause any song from anywhere 
+  - Volume Control
+    - We build a dynamic volume control system
+    - You can see the sign changes with increasing and Decreasing the volume also the mute sing will appear
+-    
 
 ## How to Contribute
 
@@ -47,6 +58,4 @@ If you'd like to contribute to this project, feel free to fork the repository an
 - Fix any bugs or issues found in the application.
 - Write tests to ensure code reliability.
 
-(Youtube)[https://youtu.be/amFYvQK4huo?si=locqWfJ0tmgF1HGB]
 
-(Assets Download) [https://drive.google.com/file/d/1Bjov6kHBUzk_R-RRwazCIFYUfjmP9VJU/view]
