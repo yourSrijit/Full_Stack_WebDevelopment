@@ -14,7 +14,7 @@ app.use((req,rep)=>{
     rep.send("This is a basic Response");
 }); 
 
-app.get("/",(req,res)=>{
+app.get("/",(req,res)=>{ 
     console.log('You connected to rout path ');
 });
 
