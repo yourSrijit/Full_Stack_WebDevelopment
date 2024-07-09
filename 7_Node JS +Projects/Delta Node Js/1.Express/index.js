@@ -11,14 +11,14 @@ app.listen(port,()=>{
 
 app.use((req,rep)=>{
     console.log("Request received");
-    rep.send("This is a basic Response");
+    rep.send("This is a basic Response");  
 }); 
 
 app.get("/",(req,res)=>{ 
     console.log('You connected to rout path ');
 });
 
-app.get("/:username/:id",(req,res)=>{
+app.get("/:username/:id",(req,res)=>{ 
     let{username,id}=req.params;
     let html=`<h1> Welcome in the page of ${username} of id ${id} </h1>`;
     res.send(html)
