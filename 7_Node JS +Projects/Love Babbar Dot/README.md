@@ -1,7 +1,0 @@
-# DOT BATCH BACKEND
----
-## 74. BACKEND 1
-   GET
-   POST
-   PUT
-   DELETE
