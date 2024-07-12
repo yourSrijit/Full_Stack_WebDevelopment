@@ -7,7 +7,7 @@ export const signup=async(req,res)=>{
     try{ 
         const{ fullName,username,password,confirmPassword,gender }=req.body;
         
-        if(password !=confirmPassword){
+        if(password !== confirmPassword){
             return res.status(400).json({
                 error:"Password don't match try again!"
             })
@@ -17,6 +17,7 @@ export const signup=async(req,res)=>{
         if(user){
             return res.status(400).json({error:"User alredy exists"})
         }
+
         //Hash password
         const salt=await bcrypt.genSalt(10);
         const HashPassword=await bcrypt.hash(password,salt);
@@ -34,7 +35,7 @@ export const signup=async(req,res)=>{
         });
 
         if(newUser){
-            TokenGenerator(newUser._id,res);
+            // TokenGenerator(newUser._id,res); 
             await  newUser.save();
 
             res.status(201).json({
