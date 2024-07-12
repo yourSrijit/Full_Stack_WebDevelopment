@@ -8,23 +8,24 @@ import userRoutes from "./routes/userRoutes.js"
 
 import ConnectToDb from "./db/dbConnection.js";
 
-const app=express();
+const app=express(); 
 const PORT=process.env.PORT || 4000;
-
-dotenv.config();
-
+ 
+dotenv.config(); 
+  
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(cookieParser());
+app.use(cookieParser()); 
 
 app.use("/api/auth" ,authRoute)
 app.use("/api/messages" ,messageRoute)
 app.use("/api/users" ,userRoutes)
 
-//Root route
+
+//Root route 
 app.get("/",(req,res)=>{
-    res.send("Hi srijit");
+    res.send("Hi srijit I am running");
 })
 
 

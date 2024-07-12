@@ -4,7 +4,7 @@ import TokenGenerator from "../utils/jwtAuth.js";
 
 //signup page
 export const signup=async(req,res)=>{
-    try{
+    try{ 
         const{ fullName,username,password,confirmPassword,gender }=req.body;
         
         if(password !=confirmPassword){
