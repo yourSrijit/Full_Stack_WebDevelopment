@@ -3,6 +3,7 @@ import Message from "../model/messageModel.js";
 
 export const sendMessage =async(req,res)=>{
     try{
+       
         const {message}=req.body;
         const {id: receiverId}=req.params;
         const senderId=req.user._id;
@@ -24,7 +25,7 @@ export const sendMessage =async(req,res)=>{
         });
 
         if(newMessage){
-            conversation.message.push(newMessage);
+            conversation.message.push(newMessage._id);
 
             //Socket IO function
 

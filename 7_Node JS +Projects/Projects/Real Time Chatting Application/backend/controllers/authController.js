@@ -35,7 +35,8 @@ export const signup=async(req,res)=>{
         });
 
         if(newUser){
-            // TokenGenerator(newUser._id,res); 
+            //Generate JWT Token
+            TokenGenerator(newUser._id,res); 
             await  newUser.save();
 
             res.status(201).json({
@@ -63,12 +64,13 @@ export const login=async(req,res)=>{
     
     const user=await User.findOne({username});
     
-    const isPasswordCorrect=await bcrypt.compare(password ,user.password || "");
+    const isPasswordCorrect=await bcrypt.compare(password ,user?.password || "");
     
     if(!user ||!isPasswordCorrect){
         return res.status(400).json({msg :" Invalid username or password"}) 
     }
     
+    TokenGenerator(user._id,res);
     res.status(201).json({
         _id:user._id,
         fullName:user.fullName,
@@ -88,7 +90,7 @@ export const login=async(req,res)=>{
 //Logout page
 export const logout=(req,res)=>{
     try{
-        res.cookie("jwt","",{
+        res.cookie("jwtToken","",{
             maxAge:0
         });
         res.status(200).json({message:"Logged out successfully"})
