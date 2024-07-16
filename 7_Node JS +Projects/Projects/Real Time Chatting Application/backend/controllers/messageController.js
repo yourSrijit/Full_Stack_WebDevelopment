@@ -30,6 +30,7 @@ export const sendMessage =async(req,res)=>{
             //Socket IO function
 
 
+            
             // await newMessage.save(); This will run serially
             // await conversation.save();
 
@@ -54,7 +55,7 @@ export const getMessage =async(req,res)=>{
 
         let conversation=await Conversation.findOne({
             participants:{$all:[senderId,receiverId]},
-        }).populate("message");
+        }).populate("message");  //NOT REFERANCE BUT ACTUAL MESSAGES
 
         if(!conversation){
             res.status(200).json({messages:[]});
