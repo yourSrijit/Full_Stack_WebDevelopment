@@ -1,7 +1,9 @@
 import React from 'react';
 import GenderCheck from './GenderCheck';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+    
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
             <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
@@ -37,7 +39,7 @@ const SignUp = () => {
                 {/* Gender Checkbox here  */}
                 <GenderCheck/>
 
-                <a href='#' className='text-sm hover:underline hover:text-blue-600 mt-4 mb-2 inline-block' > Already have account?</a>
+                <Link to={"/login"} className='text-sm hover:underline hover:text-blue-600 mt-4 mb-2 inline-block' > Already have account?</Link>
                 <div className='flex items-center justify-center'>
                     <button className='btn btn-sm mt-2 text-center w-20 '>Sign Up</button>
                 </div>
