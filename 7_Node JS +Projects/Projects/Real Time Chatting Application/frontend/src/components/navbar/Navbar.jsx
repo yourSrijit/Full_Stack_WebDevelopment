@@ -14,7 +14,8 @@ function Navbar() {
             <div className="flex-1">
                 <a className="btn btn-ghost text-xl">Huu Chat 🐼</a>
             </div>
-            <div className="flex-none">
+            <span className='font-bold'>{authUser?.fullName}</span>
+            <div className="flex">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
