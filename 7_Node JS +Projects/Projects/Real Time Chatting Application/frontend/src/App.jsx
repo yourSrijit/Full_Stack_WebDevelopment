@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
      <Routes>
       
-      <Route path='/' element={!authUser ? <Navigate to="/signup" /> :<Home/>}/>
+      <Route path='/' element={!authUser ? <Navigate to="/login" /> :<Home/>}/>
       <Route path='/login' element={ authUser ?<Navigate to="/" /> :<Login/>}/>
       <Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp/> }/>
 

@@ -23,7 +23,7 @@ const useSignup=()=>{
                 throw new Error(data.error)
             }
             
-            toast.success('Successfully Signin')
+            toast.success('Successfully Signed in')
 
             //local Storage 
             localStorage.setItem("log-user",JSON.stringify(data));
