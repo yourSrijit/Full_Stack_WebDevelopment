@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import { useAuthContext } from '../context/AuthContext';
 
 const useSignup=()=>{
     const[loading,setLoading]=useState(false);
+    const {setAuthUser}=useAuthContext();
 
     const signup=async({fullName,username,password,confirmPassword,gender})=>{
         const success=handelInputError({fullName,username,password,confirmPassword,gender})
@@ -21,10 +23,12 @@ const useSignup=()=>{
                 throw new Error(data.error)
             }
             
-            toast.success('Successfully Signin✅')
+            toast.success('Successfully Signin')
 
-            //local Storage
+            //local Storage 
+            localStorage.setItem("log-user",JSON.stringify(data));
             // contaxt api 
+            setAuthUser(data);
 
         }
         catch(error){
@@ -50,7 +54,7 @@ const handelInputError=({fullName,username,password,confirmPassword,gender})=>{
         return false;
     }
     if(password.length<4){
-        toast.error("Password must be atleast 64 characters")
+        toast.error("Password must be atleast 4 characters")
         return false;
     }
     return true;
