@@ -7,9 +7,9 @@ import messageRoute from "./routes/messageRoute.js"
 import userRoutes from "./routes/userRoutes.js" 
 
 import ConnectToDb from "./db/dbConnection.js";
+import { app, server } from "./socket/socket.js";
 
 
-const app=express(); 
 const PORT=process.env.PORT || 4000;
  
 dotenv.config(); 
@@ -30,7 +30,7 @@ app.get("/",(req,res)=>{
 
 
 
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     ConnectToDb();
     console.log(`Server is successfully running on port ${PORT}`);
 })

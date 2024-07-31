@@ -3,6 +3,7 @@ import Messages from './Messages'
 import MessageInput from './MessageInput'
 import { TbMessageCircleHeart } from "react-icons/tb";
 import useConversation from '../../zustand/useConversation';
+import { useAuthContext } from '../../context/AuthContext';
 
 
 function MessageContainer() {
@@ -34,9 +35,11 @@ function MessageContainer() {
 }
 
 const NoChatSelected=()=>{
+  const {authUser}=useAuthContext();
   return(
     <div className='flex items-center justify-center w-full h-full'>
       <div className='px-4 text-center sm:text-lg md:text-sl text-gray-200 font-semibold felx flex-col items-center gap-2'>
+        <p>Hi {authUser.fullName}</p>
         <p>Welcome to <span className='text-[rgb(0,205,183)] text-2xl'>Huu Chat App</span></p>
         <span>Select a chat to start messaging</span><TbMessageCircleHeart className='text-2xl md:text-2xl text-center ml-2 inline-block '/>
         <img src="icon.png" alt="" className='w-80 ' />
