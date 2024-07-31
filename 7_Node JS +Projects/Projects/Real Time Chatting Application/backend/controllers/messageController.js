@@ -58,10 +58,10 @@ export const getMessage =async(req,res)=>{
         }).populate("message");  //NOT REFERANCE BUT ACTUAL MESSAGES
 
         if(!conversation){
-            res.status(200).json({messages:[]});
+            return res.status(200).json({messages:[]});
         }
        
-        const messages=conversation.message;
+        const messages=conversation?.message;
         res.status(200).json({messages});
     }
     catch(error){
