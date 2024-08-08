@@ -98,19 +98,48 @@ export const verifymail = async (req, res) => {
 };
 
 
-export const login=async(req,res)=>{
-    const {email,password} =req.body;
-    if(!email || !password){
-        return res.status(500).json({success:false,message:"Please fill all the fields"})
-    }
-    
-    const response=await User.findOne({
-        email:email
-    })
-    if(!response){
+export const login = async (req, res) => {
+    const { email, password } = req.body;
 
+    if (!email || !password) {
+        return res.status(400).json({ success: false, message: "Please fill all the fields" });
     }
-}
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User does not exist" });
+        }
+
+        const isValidPassword = await bcrypt.compare(password, user.password);
+
+        if (!isValidPassword) {
+            return res.status(400).json({ success: false, message: "Incorrect password" });
+        }
+
+        // Generate a token for the user
+        await TokenGenerator(user._id, res);
+
+        // Update last login time
+        user.lastLogin = new Date();
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            message: 'Successfully logged in',
+            user: {
+                ...user.toObject(),
+                password: undefined // Exclude the password from the response
+            }
+        });
+
+    } catch (error) {
+        console.log("Error in login:", error.message);
+        res.status(500).json({ success: false, message: "Something went wrong during login" });
+    }
+};
+
 export const logout=async(req,res)=>{
     res.clearCookie("jwtToken");
     res.status(200).json({success:true,message:"Logged out successfully"})
