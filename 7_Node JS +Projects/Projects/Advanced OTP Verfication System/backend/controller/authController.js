@@ -15,6 +15,9 @@ export const signup=async(req,res)=>{
     if(!email || !password ||!name){
     throw new Error("All fields are required");
     }
+    if(password.length<4){
+        throw new Error("Password should be more than 4 character")
+    }
     const user=await User.findOne({email});
     if(user){
         return res.status(400).json({success:false,message:"User already exists"})
@@ -143,8 +146,7 @@ export const login = async (req, res) => {
 
 export const logout=async(req,res)=>{
     res.clearCookie("jwtToken");
-    res.status(200).json({success:true,message:"Logged out successfully"})
-    
+    res.status(200).json({success:true,message:"Logged out successfully"})   
 }
 
 export const forgotPassword=async(req,res)=>{
@@ -177,6 +179,9 @@ export const resetPassword=async(req,res)=>{
     try{
         const {token}=req.params;
         const {password}=req.body;
+        if(password.length<4){
+            throw new Error("Password should be more than 4 character")
+        }
         const user=await User.findOne({
             verificationToken:token,
             verificationTokenExpireAt: {$gt:Date.now()}
@@ -202,4 +207,20 @@ export const resetPassword=async(req,res)=>{
         res.status(200).json({success:false,message:"Something went wrong while doing reset password"})
     }
    
+}
+
+export const checkAuth=async(req,res)=>{
+    try{        
+        const user=await User.findById(req.userId).select("-password");
+                
+        if(!user){
+            return res.status(400).json({success:false,message:"User not found"})
+        }
+        res.status(200).json({success:true,user})
+
+    }catch(error){
+                console.log("Error in checkAuth",error);
+                res.status(400).json({success:false,message:error.message})
+    }
+    
 }
