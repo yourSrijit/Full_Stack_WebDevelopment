@@ -2,7 +2,9 @@ import {User} from '../models/userModel.js'
 import bcrypt from "bcryptjs"
 import { verificationCodeGenerator } from '../utils/verificationCodeGenerator.js';
 import { TokenGenerator } from '../utils/TokenGenerator.js';
-import { sendVerificationEmail, sendWelcomeEmail } from '../mailtrap/emails.js';
+import { sendVerificationEmail, sendWelcomeEmail,sendPasswordResetEmail,sendResetSuccessEmail } from '../mailtrap/emails.js';
+import crypto from "crypto"
+
 
 
 export const signup=async(req,res)=>{
@@ -97,7 +99,6 @@ export const verifymail = async (req, res) => {
     }
 };
 
-
 export const login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -144,4 +145,61 @@ export const logout=async(req,res)=>{
     res.clearCookie("jwtToken");
     res.status(200).json({success:true,message:"Logged out successfully"})
     
+}
+
+export const forgotPassword=async(req,res)=>{
+    const {email} =req.body;
+    try{
+    const user=await User.findOne({email});
+    if(!user){
+       return res.status(400).json({success:false,message:"User not found"})
+    }
+
+    //Generate rset token
+    const resetToken=crypto.randomBytes(20).toString('hex');
+    const resetTokenExpireAt=Date.now() + 1*60*60*1000; //1 houre
+    user.verificationToken=resetToken;
+    user.verificationTokenExpireAt=resetTokenExpireAt;
+    await user.save();
+    
+    //send email
+    await sendPasswordResetEmail(user.email,`${process.env.CLIENT_URL}/reset-password/${resetToken}`)
+    res.status(200).json({success:true,message:"Password reset link send to your email"})
+    console.log("Forget password send successfully");
+    }
+    catch(error){
+        console.log("Something went wrong in forgot password");
+        res.status(400).json({success:false,message:"Password reset link sending issue"})     
+    }
+}
+
+export const resetPassword=async(req,res)=>{
+    try{
+        const {token}=req.params;
+        const {password}=req.body;
+        const user=await User.findOne({
+            verificationToken:token,
+            verificationTokenExpireAt: {$gt:Date.now()}
+        })
+        if(!user){
+            return res.status(400).json({success:false,message:"Invalid or expired reset token"})
+        }
+        //update password
+        const salt=await bcrypt.genSalt(10);
+        const hashPassword=await bcrypt.hash(password,salt)
+        
+        user.password=hashPassword;
+        user.verificationToken=undefined,
+        user.verificationTokenExpireAt=undefined
+        await user.save();
+        await sendResetSuccessEmail(user.email);
+
+        console.log("Succesfully done reset password");
+        res.status(200).json({success:true,message:"Succesfully done reset password"})
+        
+    }catch(error){
+        console.log("Something went wrong while doing reset password");
+        res.status(200).json({success:false,message:"Something went wrong while doing reset password"})
+    }
+   
 }
